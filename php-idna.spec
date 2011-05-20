@@ -6,7 +6,7 @@
 Summary:	PHP IDNA Extension
 Name:		php-%{modname}
 Version:	1.0.0
-Release:	%mkrel 1
+Release:	1
 Group:		Development/PHP
 License:	PHP
 URL:		http://www.xarg.org/project/php-idna/
@@ -14,7 +14,6 @@ Source0:	http://www.xarg.org/download/idna-%{version}.tar.gz
 Source1:	B19_idna.ini
 BuildRequires:	php-devel >= 3:5.2.0
 BuildRequires:	idn-devel
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 This extension provides a PHP implementation of the Internationalized Domain
@@ -39,7 +38,6 @@ phpize
 mv modules/*.so .
 
 %install
-rm -rf %{buildroot} 
 
 install -d %{buildroot}%{_libdir}/php/extensions
 install -d %{buildroot}%{_sysconfdir}/php.d
@@ -59,11 +57,7 @@ if [ "$1" = "0" ]; then
     fi
 fi
 
-%clean
-rm -rf %{buildroot}
-
 %files
-%defattr(-,root,root)
 %doc CREDITS
 %config(noreplace) %attr(0644,root,root) %{_sysconfdir}/php.d/%{inifile}
 %attr(0755,root,root) %{_libdir}/php/extensions/%{soname}
