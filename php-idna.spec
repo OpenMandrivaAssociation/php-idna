@@ -12,6 +12,7 @@ License:	PHP
 URL:		http://www.xarg.org/project/php-idna/
 Source0:	http://www.xarg.org/download/idna-%{version}.tar.gz
 Source1:	B19_idna.ini
+Patch0:		idna-1.0.0-php54x.diff
 BuildRequires:	php-devel >= 3:5.2.0
 BuildRequires:	idn-devel
 
@@ -22,6 +23,7 @@ Name Applications (IDNA) standard.
 %prep
 
 %setup -q -n %{modname}-%{version}
+%patch0 -p0
 
 cp %{SOURCE1} %{inifile}
 
