@@ -64,3 +64,33 @@ fi
 %config(noreplace) %attr(0644,root,root) %{_sysconfdir}/php.d/%{inifile}
 %attr(0755,root,root) %{_libdir}/php/extensions/%{soname}
 
+
+
+%changelog
+* Sun May 06 2012 Oden Eriksson <oeriksson@mandriva.com> 1.0.0-5
++ Revision: 797081
+- fix build
+- rebuild for php-5.4.x
+
+* Sun Jan 15 2012 Oden Eriksson <oeriksson@mandriva.com> 1.0.0-4
++ Revision: 761258
+- rebuild
+
+* Wed Aug 24 2011 Oden Eriksson <oeriksson@mandriva.com> 1.0.0-3
++ Revision: 696434
+- rebuilt for php-5.3.8
+
+* Fri Aug 19 2011 Oden Eriksson <oeriksson@mandriva.com> 1.0.0-2
++ Revision: 695409
+- rebuilt for php-5.3.7
+
+  + Nicolas Lécureuil <nlecureuil@mandriva.com>
+    - Clean spec file for rpm5
+
+* Fri May 20 2011 Oden Eriksson <oeriksson@mandriva.com> 1.0.0-1
++ Revision: 676257
+- import php-idna
+
+
+* Fri May 20 2011 Oden Eriksson <oeriksson@mandriva.com> 1.0.0-1mdv2010.2
+- initial Mandriva package
